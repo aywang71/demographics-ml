@@ -3,9 +3,6 @@
 rm(list=ls()) # clean up any old stuff in R
 setwd("~/GitHub/demographics-ml") # go to this folder
 
-#load up myfunctions.R
-source("~/GitHub/data-science/myfunctions.R")
-
 #library import
 library(tidyverse)
 library(dplyr)
@@ -47,6 +44,9 @@ dem2008$county_fips <- as.integer(dem2008$county_fips)
 #merges into election data
 data2008 <- inner_join(dem2008, election2008)
 data2008 <- merge(data2008, geodata,by="county_fips")
+setwd("~/GitHub/demographics-ml/Data")
+write.csv(data2008, file = "2008data.csv")
+setwd("~/GitHub/demographics-ml")
 
 election2012 <- read.csv("Data/2012data/2012election.csv", header = TRUE)
 employment2012 <- read.csv("Data/2012data/2012employment.csv", skip = 1, header = TRUE)
@@ -64,6 +64,10 @@ dem2012 <- dem2012 %>% separate(id.x, c(NA, "county_fips"), sep = -5)
 dem2012$county_fips <- as.integer(dem2012$county_fips)
 data2012 <- inner_join(dem2012, election2012)
 data2012 <- merge(data2012, geodata,by="county_fips")
+setwd("~/GitHub/demographics-ml/Data")
+write.csv(data2012, file = "2012data.csv")
+setwd("~/GitHub/demographics-ml")
+
 
 election2016 <- read.csv("Data/2016data/2016election.csv", header = TRUE)
 employment2016 <- read.csv("Data/2016data/2016employment.csv", skip = 1, header = TRUE)
@@ -81,3 +85,6 @@ dem2016 <- dem2016 %>% separate(id.x, c(NA, "county_fips"), sep = -5)
 dem2016$county_fips <- as.integer(dem2016$county_fips)
 data2016 <- inner_join(dem2016, election2016)
 data2016 <- merge(data2016, geodata,by="county_fips")
+setwd("~/GitHub/demographics-ml/Data")
+write.csv(data2016, file = "2016data.csv")
+setwd("~/GitHub/demographics-ml")
