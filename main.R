@@ -13,7 +13,7 @@ library(tidyverse)
 library(usmap)
 library(gridExtra)
 
-#need to combine the demographic data into 2016, 2012, and 2008
-#need to match counties to the lat/long coordinates defined by the 2020 data
-
+data2008 <- read.csv("data/2008data.csv")
+data2012 <- read.csv("data/2012data.csv")
+data2016 <- read.csv("data/2016data.csv")
 data2020 <- read.csv("data/2020data.csv")
