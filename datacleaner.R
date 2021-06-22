@@ -8,6 +8,12 @@ library(tidyverse)
 library(dplyr)
 library(usmap)
 library(tidycensus)
+library(class)
+library(ggvis)
+library(gmodels)
+library(caret)
+library(GGally)
+library(gridExtra)
 
 #reads in the 2020 data and splits up for coords
 data2020 <- read.csv("data/2020data.csv")

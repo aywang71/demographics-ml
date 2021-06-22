@@ -17,3 +17,6 @@ data2008 <- read.csv("data/2008data.csv")
 data2012 <- read.csv("data/2012data.csv")
 data2016 <- read.csv("data/2016data.csv")
 data2020 <- read.csv("data/2020data.csv")
+
+set.seed(1234)
+
